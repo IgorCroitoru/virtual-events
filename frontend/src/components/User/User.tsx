@@ -9,6 +9,7 @@ import {
     useMaybeTrackRefContext,
     useMaybeParticipantContext,
     useIsMuted,
+    useTrackRefContext,
 } from "@livekit/components-react";
 import GameConfig from "../../../game-config";
 import { ChannelUser } from "@/user/ChannelUser";
@@ -35,11 +36,25 @@ const User = forwardRef<HTMLDivElement, UserProps>(
     ({ user, participant: prt }, externalRef) => {
         const internalRef = useRef<HTMLDivElement>(null);
         const ref = externalRef ?? internalRef;
-        const trackRef = useMaybeTrackRefContext();
+        const trackRef = useMaybeTrackRefContext()
         const participant = useMaybeParticipantContext();
         const isSpeaking = useIsSpeaking(participant);
-        const isMuted = useIsMuted(Track.Source.Camera);
-        const isMicroMuted = useIsMuted(Track.Source.Microphone);
+        
+        // Create track references for mute state checking
+        const cameraTrackRef = participant ? {
+            source: Track.Source.Camera as Track.Source,
+            participant: participant,
+            publication: participant.getTrackPublication(Track.Source.Camera)
+        } : null;
+        
+        const micTrackRef = participant ? {
+            source: Track.Source.Microphone as Track.Source,
+            participant: participant,
+            publication: participant.getTrackPublication(Track.Source.Microphone)
+        } : null;
+        
+        const isMuted = cameraTrackRef ? useIsMuted(cameraTrackRef) : true;
+        const isMicroMuted = micTrackRef ? useIsMuted(micTrackRef) : true;
         // const isSpeaking = false;
         const [translate, setTranslate] = useState("");
         // const camera = useChannelStore(state => state.camera);
@@ -85,9 +100,10 @@ const User = forwardRef<HTMLDivElement, UserProps>(
         }, [userId, ref]);
         const isVideoActive =
             trackRef &&
-            trackRef.publication?.kind === "video" &&
-            trackRef.publication?.isSubscribed &&
-            trackRef.publication?.track &&
+            trackRef.publication &&
+            trackRef.publication.kind === "video" &&
+            trackRef.publication.isSubscribed &&
+            trackRef.publication.track &&
             !isMuted;
         return (
             <div
@@ -111,9 +127,9 @@ const User = forwardRef<HTMLDivElement, UserProps>(
                         isSpeaking ? "ring-4 ring-green-400" : ""
                     }`}
                 >
-                    {isVideoActive ? (
+                    {isVideoActive && trackRef.publication ? (
                         <VideoTrack
-                            trackRef={trackRef}
+                            trackRef={trackRef as any}
                             className="w-full h-full object-cover"
                             autoPlay
                             playsInline

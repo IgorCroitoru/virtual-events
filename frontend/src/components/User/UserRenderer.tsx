@@ -1,6 +1,6 @@
 'use client'
 
-import { useTracks, TrackRefContext, useIsMuted, TrackReferenceOrPlaceholder, AudioTrack, useRoomContext, useParticipants, ParticipantLoop, ParticipantContext } from '@livekit/components-react'
+import { useTracks, TrackRefContext, useIsMuted, TrackReferenceOrPlaceholder, AudioTrack, useRoomContext, useParticipants, ParticipantLoop, ParticipantContext, TrackReference } from '@livekit/components-react'
 import { useMemo } from 'react'
 import { RoomEvent, Track } from 'livekit-client'
 import { useChannelStore } from '@/store/useChannelStore'
@@ -15,7 +15,7 @@ export const UserRenderer = () => {
   const zoneStates = useChannelStore((s) => s.zoneStates)
   const participants = useParticipants()
   const nearbyUsers = useChannelStore((s) => s.nearbyUsers)
-  const videoTracks = useTracks([{ source: Track.Source.Camera }],
+  const videoTracks = useTracks([Track.Source.Camera ],
     {
       updateOnlyOn: [
         RoomEvent.TrackPublished,
@@ -27,7 +27,7 @@ export const UserRenderer = () => {
       ]
     }
   );
-  const audioTracks = useTracks([{ source: Track.Source.Microphone }], {
+  const audioTracks = useTracks([Track.Source.Microphone ], {
     updateOnlyOn: [
       RoomEvent.TrackPublished,
       RoomEvent.TrackSubscribed,
@@ -117,7 +117,7 @@ export const UserRenderer = () => {
       return (
         <ParticipantContext.Provider key={participant.identity} value={participant}>
 
-        <TrackRefContext.Provider key={participant.identity} value={trackRef}>
+        <TrackRefContext.Provider key={participant.identity} value={trackRef ?? undefined}>
           <User 
             user={user} 
             // participant={participant}
@@ -149,7 +149,7 @@ export const UserRenderer = () => {
 }
 
 // Separate component for audio rendering
-const AudioRenderer = ({ audioTracks }: { audioTracks: TrackReferenceOrPlaceholder[] }) => {
+const AudioRenderer = ({ audioTracks }: { audioTracks: TrackReference[] }) => {
   return (
     <>
       {audioTracks.map((track) => (
