@@ -139,6 +139,7 @@ export function AppSidebar() {
             />
               {/* Shared Channel Update Dialog */}
             <ChannelUpdateDialog
+                
                 open={isChannelUpdateDialogOpen}
                 onOpenChange={handleChannelUpdateDialogChange}
                 channel={channelToUpdate}

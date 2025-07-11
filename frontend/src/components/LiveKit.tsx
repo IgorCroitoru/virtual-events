@@ -9,7 +9,8 @@ import {
   RoomContext,
   usePersistentUserChoices,
   TrackLoop,
-  VideoTrack
+  VideoTrack,
+  useRemoteParticipants
 } from '@livekit/components-react';
 import { createLocalAudioTrack,createLocalVideoTrack, Room, Track } from 'livekit-client';
 import '@livekit/components-styles';
@@ -102,7 +103,7 @@ export const LiveKitProvider = ({ children }: PropsWithChildren) => {
         // Race between connection and timeout
         await Promise.race([
           roomInstance.connect(LIVEKIT_URL, channelLiveKitToken.token, {
-            autoSubscribe: true,
+            autoSubscribe: false,
           }),
           timeoutPromise
         ]);
@@ -198,7 +199,7 @@ export const LiveKitProvider = ({ children }: PropsWithChildren) => {
     const handleParticipantDisconnected = (participant: any) => {
       console.log('👤 Participant disconnected:', participant.identity);
     };
-
+    
     // Add event listeners
     room.on('connected', handleRoomConnected);
     room.on('disconnected', handleRoomDisconnected);
@@ -256,13 +257,12 @@ export function MyVideoConference() {
     ],
     { onlySubscribed: false },
   );
- 
   return (
 
     <>
       {tracks.map((trackRef) => (
         <VideoTrack
-          trackRef={trackRef}
+          trackRef={trackRef as any}
           style={{
             width: '160px',
             height: '120px',
