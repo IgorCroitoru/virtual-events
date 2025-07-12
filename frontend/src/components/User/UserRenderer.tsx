@@ -20,6 +20,7 @@ import { useChannelStore } from "@/store/useChannelStore";
 import { ChannelUser } from "@/user/ChannelUser";
 import User from "./User";
 import { useAuthStore } from "@/store/useAuthStore";
+import { useMutedUsers } from "@/hooks/useMutedUsers";
 import { use } from "matter";
 
 export const UserRenderer = () => {
@@ -30,26 +31,31 @@ export const UserRenderer = () => {
     const participants = useParticipants();
     const nearbyUsers = useChannelStore((s) => s.nearbyUsers);
     const remoteParticipants = useRemoteParticipants();
+    
+    // Use the muted users hook to handle local muting
+    const { mutedUsers } = useMutedUsers();
     const videoTracks = useTracks([Track.Source.Camera], {
-        updateOnlyOn: [
-            RoomEvent.TrackPublished,
-            RoomEvent.TrackSubscribed,
-            RoomEvent.TrackUnsubscribed,
-            RoomEvent.TrackUnpublished,
-            RoomEvent.ParticipantConnected,
-            RoomEvent.ParticipantDisconnected,
-        ],
+        // updateOnlyOn: [
+        //     RoomEvent.TrackPublished,
+        //     RoomEvent.TrackSubscribed,
+        //     RoomEvent.TrackUnsubscribed,
+        //     RoomEvent.TrackUnpublished,
+        //     RoomEvent.ParticipantConnected,
+        //     RoomEvent.ParticipantDisconnected,
+        //     RoomEvent.TrackMuted
+        // ],
         onlySubscribed: true, // Only get subscribed tracks
     });
     const audioTracks = useTracks([Track.Source.Microphone], {
-        updateOnlyOn: [
-            RoomEvent.TrackPublished,
-            RoomEvent.TrackSubscribed,
-            RoomEvent.TrackUnsubscribed,
-            RoomEvent.TrackUnpublished,
-            RoomEvent.ParticipantConnected,
-            RoomEvent.ParticipantDisconnected,
-        ],
+        // updateOnlyOn: [
+        //     RoomEvent.TrackPublished,
+        //     RoomEvent.TrackSubscribed,
+        //     RoomEvent.TrackUnsubscribed,
+        //     RoomEvent.TrackUnpublished,
+        //     RoomEvent.ParticipantConnected,
+        //     RoomEvent.ParticipantDisconnected,
+        //     RoomEvent.TrackMuted
+        // ],
         onlySubscribed: true, // Only get subscribed tracks
     });
     const currentUserId = user?.id ?? "";
@@ -83,12 +89,12 @@ export const UserRenderer = () => {
         const trackUserZoneId = userZones.get(identity) ?? -1; // Default to -1 if not found
         // Always include your own audio
         // if (trackUserId === currentUserId) return true;
+        if(mutedUsers.has(identity)) return false;
         if (nearbyUsers.has(identity)) return true;
-
         if (trackUserZoneId === -1) return false;
 
         return trackUserZoneId === currentUserZoneId;
-    }, [currentUserZoneId, nearbyUsers, userZones]);
+    }, [currentUserZoneId, nearbyUsers, userZones, mutedUsers]);
 
     useEffect(()=> {
       remoteParticipants.forEach((participant) => {

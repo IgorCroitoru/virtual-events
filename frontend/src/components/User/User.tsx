@@ -19,19 +19,13 @@ import { userRefsManager } from "@/user/UserRefsManager";
 import React from "react";
 import { Participant, Track } from "livekit-client";
 import { Icons } from "../icons";
+import { UserContextMenu } from "./UserContextMenu";
 interface UserProps {
     // trackRef: TrackReferenceOrPlaceholder | null;
     user: ChannelUser;
     participant?: Participant; // Replace with the correct type for participant
 }
-function useSafeEnsureTrackRef(trackRef: TrackReferenceOrPlaceholder | null) {
-    try {
-        return trackRef ? useEnsureTrackRef(trackRef) : null;
-    } catch (error) {
-        console.warn("Failed to ensure track reference:", error);
-        return null;
-    }
-}
+
 const User = forwardRef<HTMLDivElement, UserProps>(
     ({ user, participant: prt }, externalRef) => {
         const internalRef = useRef<HTMLDivElement>(null);
@@ -105,7 +99,8 @@ const User = forwardRef<HTMLDivElement, UserProps>(
             trackRef.publication.isSubscribed &&
             trackRef.publication.track &&
             !isMuted;
-        return (
+
+        const userComponent = (
             <div
                 ref={ref}
                 id={user.id}
@@ -166,6 +161,12 @@ const User = forwardRef<HTMLDivElement, UserProps>(
                     <div className="absolute top-1 left-1 w-2 h-2 bg-green-500 rounded-full"></div>
                 )}
             </div>
+        );
+
+        return (
+            <UserContextMenu participant={participant}>
+                {userComponent}
+            </UserContextMenu>
         );
     }
 );

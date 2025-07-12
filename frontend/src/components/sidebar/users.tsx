@@ -10,6 +10,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { UserAccountDialog } from "@/components/user-account-dialog";
 import { useState } from "react";
 import { authService } from "@/services/auth";
+import { UserContextMenu } from "../User/UserContextMenu";
+import { useParticipants } from "@livekit/components-react";
 // import { authManager } from "@/services/authManager";
 
 export interface NearbyUserProps {
@@ -20,19 +22,22 @@ export interface CurrentUserProps {
     user: UserDto;
 }
 export const SidebarUser = ({ user }: NearbyUserProps) => {
+    const participant = useParticipants().find(p => p.identity === user.id);
     return (
         <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-                <a className="cursor-pointer">
-                    <Avatar className="w-7 h-7 rounded-full">
-                        <AvatarImage src="https://github.com/shadcn.png"/>
-                        <AvatarFallback className="">
-                            {user.name.slice(0, 2).toUpperCase()}
-                        </AvatarFallback>
-                    </Avatar>
-                    {user.name}
-                </a>
-            </SidebarMenuButton>
+            <UserContextMenu participant={participant}>
+                <SidebarMenuButton asChild>
+                    <a className="cursor-pointer">
+                        <Avatar className="w-7 h-7 rounded-full">
+                            <AvatarImage src="https://github.com/shadcn.png"/>
+                            <AvatarFallback className="">
+                                {user.name.slice(0, 2).toUpperCase()}
+                            </AvatarFallback>
+                        </Avatar>
+                        {user.name}
+                    </a>
+                </SidebarMenuButton>
+            </UserContextMenu>
         </SidebarMenuItem>
     );
 };
