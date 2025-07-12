@@ -20,7 +20,6 @@ import { useChannelStore } from "@/store/useChannelStore";
 import { ChannelUser } from "@/user/ChannelUser";
 import User from "./User";
 import { useAuthStore } from "@/store/useAuthStore";
-import { useMutedUsers } from "@/hooks/useMutedUsers";
 import { use } from "matter";
 
 export const UserRenderer = () => {
@@ -33,7 +32,6 @@ export const UserRenderer = () => {
     const remoteParticipants = useRemoteParticipants();
     
     // Use the muted users hook to handle local muting
-    const { mutedUsers } = useMutedUsers();
     const videoTracks = useTracks([Track.Source.Camera], {
         // updateOnlyOn: [
         //     RoomEvent.TrackPublished,
@@ -89,12 +87,12 @@ export const UserRenderer = () => {
         const trackUserZoneId = userZones.get(identity) ?? -1; // Default to -1 if not found
         // Always include your own audio
         // if (trackUserId === currentUserId) return true;
-        if(mutedUsers.has(identity)) return false;
+        if(users.get(identity)?.isMuted) return false;
         if (nearbyUsers.has(identity)) return true;
         if (trackUserZoneId === -1) return false;
 
         return trackUserZoneId === currentUserZoneId;
-    }, [currentUserZoneId, nearbyUsers, userZones, mutedUsers]);
+    }, [currentUserZoneId, nearbyUsers, userZones, users]);
 
     useEffect(()=> {
       remoteParticipants.forEach((participant) => {

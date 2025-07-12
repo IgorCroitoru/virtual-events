@@ -10,8 +10,9 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { UserAccountDialog } from "@/components/user-account-dialog";
 import { useState } from "react";
 import { authService } from "@/services/auth";
-import { UserContextMenu } from "../User/UserContextMenu";
 import { useParticipants } from "@livekit/components-react";
+import { Icons } from "../icons";
+import { UserContextMenu } from "../User/User";
 // import { authManager } from "@/services/authManager";
 
 export interface NearbyUserProps {
@@ -23,19 +24,27 @@ export interface CurrentUserProps {
 }
 export const SidebarUser = ({ user }: NearbyUserProps) => {
     const participant = useParticipants().find(p => p.identity === user.id);
+    // const { isMuted } = useMutedUsers();
     return (
         <SidebarMenuItem>
-            <UserContextMenu participant={participant}>
+            <UserContextMenu participant={participant} user={user}>
                 <SidebarMenuButton asChild>
-                    <a className="cursor-pointer">
-                        <Avatar className="w-7 h-7 rounded-full">
+                    <a className="cursor-pointer flex justify-between items-center">
+                        <div className="flex flex-row items-center gap-1.5">
+
+                        <Avatar className="w-7 h-7 rounded-full ">
                             <AvatarImage src="https://github.com/shadcn.png"/>
                             <AvatarFallback className="">
                                 {user.name.slice(0, 2).toUpperCase()}
                             </AvatarFallback>
                         </Avatar>
                         {user.name}
+                        </div>
+
+                        {user.isMuted && <Icons.micOff width={4} height={4} className="rounded-full" />}
+
                     </a>
+
                 </SidebarMenuButton>
             </UserContextMenu>
         </SidebarMenuItem>

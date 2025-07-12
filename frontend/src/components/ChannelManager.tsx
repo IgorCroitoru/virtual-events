@@ -65,7 +65,7 @@ export class RoomState extends Schema {
 export const ChannelManager = () => {
     const phaserRef = useRef<IRefPhaserGame>(null);
     const sceneLoaded = useChannelStore((state) => state.sceneLoaded);
-    const user = useAuthStore((state) => state.user);
+    const localUser = useAuthStore((state) => state.user);
     const isGameLoaded = useChannelStore((state) => state.loaded);
     const addUser = useChannelStore((state) => state.addUser);
     const removeUser = useChannelStore((state) => state.removeUser);
@@ -98,7 +98,7 @@ export const ChannelManager = () => {
             // }
             response.users.forEach((user) => {
                 const channelUser = new ChannelUser(user);
-                channelUser.isLocal = user.id === user?.id;
+                channelUser.isLocal = user.id === localUser?.id;
                 addUser(channelUser);
             })
         },
@@ -259,14 +259,14 @@ export const ChannelManager = () => {
             // })
             $(player).nearbyUsers.onAdd((userId, index) => {
                 //console.log("Added new near for user:", player.id, userId);
-                if(user?.id === player.id) {
+                if(localUser?.id === player.id) {
                     useChannelStore.getState().setNearbyUser(userId);
                     //console.log("Player nearby user added:" ,userId);
                 }
                
             })
             $(player).nearbyUsers.onRemove((userId, index) => {
-                if(user?.id === player.id) {
+                if(localUser?.id === player.id) {
                 useChannelStore.getState().removeNearbyUser(userId);
                 }
                 // console.log("Player nearby user removed:" ,userId);
@@ -275,7 +275,7 @@ export const ChannelManager = () => {
                 // console.log("Player nearby users updated:", player.id, val);
                 useChannelStore.getState().updateNearbyUsers(val.toArray());
             })
-            scene.addPlayer(id, id === user?.id, player.x, player.y);
+            scene.addPlayer(id, id === localUser?.id, player.x, player.y);
             // console.log(`Utilizatorul ${id} s-a alăturat ${room.sessionId} ${id}!`)
             // toast(`Utilizatorul ${id} s-a alăturat ${room.sessionId} ${id}!`);
 

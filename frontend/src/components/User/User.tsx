@@ -19,7 +19,9 @@ import { userRefsManager } from "@/user/UserRefsManager";
 import React from "react";
 import { Participant, Track } from "livekit-client";
 import { Icons } from "../icons";
-import { UserContextMenu } from "./UserContextMenu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu";
+import { useChannelStore } from "@/store/useChannelStore";
+
 interface UserProps {
     // trackRef: TrackReferenceOrPlaceholder | null;
     user: ChannelUser;
@@ -170,6 +172,64 @@ const User = forwardRef<HTMLDivElement, UserProps>(
         );
     }
 );
+
+export interface UserContextMenuProps {
+    participant?: Participant;
+    user?: ChannelUser; // Optional, if you want to pass user data
+    children?: React.ReactNode;
+}
+
+export const UserContextMenu = ({participant, user,children}:UserContextMenuProps) =>{
+    // const microphone = participant?.getTrackPublication(Track.Source.Microphone);
+    const toggleMute = useChannelStore((state) => state.toggleUserMute);
+     if (!participant) {
+        return <>{children}</>;
+    }
+
+    
+
+    return (
+        <DropdownMenu modal={false}>
+                <DropdownMenuTrigger asChild>
+                    {children}
+                </DropdownMenuTrigger>
+                <DropdownMenuContent side="right" className="w-52">
+                    <DropdownMenuItem >
+                        <Icons.user className="mr-2 h-4 w-4" />
+                        Vezi Profilul
+                    </DropdownMenuItem>
+                    {/* <ContextMenuItem >
+                        Send Message
+                    </ContextMenuItem> */}
+                    <DropdownMenuSeparator />
+                    {!participant.isLocal && (
+                        <DropdownMenuItem 
+                            // disabled={!microphone} 
+                            onClick={()=>toggleMute(participant.identity)}
+                        >
+                            {user?.isMuted ? (
+                                <>
+                                    <Icons.mic className="mr-2 h-4 w-4" />
+                                    Unmute
+                                </>
+                            ) : (
+                                <>
+                                    <Icons.micOff className="mr-2 h-4 w-4" />
+                                    Mute
+                                </>
+                            )}
+                        </DropdownMenuItem>
+                    )}
+                    {participant.isLocal && (
+                        <DropdownMenuItem disabled>
+                            <Icons.settings className="mr-2 h-4 w-4" />
+                            Settings
+                        </DropdownMenuItem>
+                    )}
+                </DropdownMenuContent>
+            </DropdownMenu>
+    )
+}
 
 User.displayName = "User";
 export default User;
