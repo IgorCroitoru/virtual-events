@@ -8,6 +8,9 @@ export type TiledObject = {
   height: number;
   gid?: number;
   zindex?: number;
+  flipX?: boolean;
+  flipY?: boolean;
+  flipDiagonally?: boolean;
 };
 
 export type TiledObjectProperty = {

@@ -5,8 +5,8 @@ const GameConfig = {
     screenMinWidth: 400, // Minimum screen width
     mapScaleY: 1.3,// Margin for 
     // Player Settings
-    playerWidth: 85, // UI & Phaser sprite width
-    playerHeight: 90, // UI & Phaser sprite height
+    playerWidth: 75, // UI & Phaser sprite width
+    playerHeight: 75, // UI & Phaser sprite height
     playerSpeed: 250, // Adjust movement speed
 
     // Camera Settings

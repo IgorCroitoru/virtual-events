@@ -4,6 +4,7 @@ import { GameEvents } from "@/game/common/common";
 import { GameEventPayloads } from "@/game/Events";
 import { getTiledProperties, getTiledPropertyByName } from "@/game/common/tiled/tiled-utils";
 
+
 export type GameObjectConfig = {
   texture: string;
   frame?: string | number;
@@ -37,9 +38,23 @@ export class GameObject extends Phaser.Physics.Arcade.Sprite implements CustomGa
     
     // Adjust for Tiled's y-coordinate system if it's a tile object
     if (config.gid) {
-      this.y += config.height;
+ 
     }
-
+    // Apply flips
+    if (config.flipX) {
+        this.setFlipX(true);
+    }
+    
+    if (config.flipY) {
+        this.setFlipY(true);
+    }
+    
+    // Diagonal flip is a 90-degree rotation combined with horizontal flip
+    if (config.flipDiagonally) {
+        this.setRotation(Math.PI / 2); // 90 degrees
+        this.setFlipX(!this.flipX); // Toggle horizontal flip
+    }
+    this.setDisplaySize(config.width, config.height);
     // Set up physics body
     this.setImmovable(true);
     (this.body as Phaser.Physics.Arcade.Body).setSize(config.width, config.height);

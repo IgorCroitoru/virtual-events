@@ -2,8 +2,6 @@ import * as Phaser from 'phaser';
 import { CustomGameObject, Direction, Position } from '../../common/types';
 import { SpeedComponent } from '@/game/components/game-object/speed-component';
 import GameConfig from '../../../../game-config';
-import { PLAYER_HEIGHT, PLAYER_WIDTH } from '@/game/common/config';
-
 export type CharacterConfig = {
   scene: Phaser.Scene;
   position: Position;
@@ -32,7 +30,7 @@ export abstract class CharacterGameObject extends Phaser.Physics.Arcade.Sprite i
     // add object to scene and enable phaser physics
     scene.add.existing(this);
     scene.physics.add.existing(this);
-    this.setDisplaySize(PLAYER_WIDTH, PLAYER_HEIGHT)
+    this.setDisplaySize(GameConfig.playerWidth, GameConfig.playerHeight);
     // add shared components
 
     // create state machine

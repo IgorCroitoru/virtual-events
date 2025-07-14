@@ -1,0 +1,69 @@
+[
+  {
+    "path": "assets/maps",
+    "files": [
+      {
+        "type": "tilemapTiledJSON",
+        "key": "cozy-office",
+        "url": "cozy-office.json"
+      }
+    ]
+  },
+  {
+    "path": "assets/images/common",
+    "files": [
+      {
+        "type": "image",
+        "key": "collision",
+        "url": "collision.png"
+      }
+    ]
+  },
+  {
+    "path": "assets/images/furniture",
+    "files": [
+      { "type": "image", "key": "glass-wooden-wall", "url": "glass-wooden-wall.png" },
+      { "type": "image", "key": "wall", "url": "wall.png" },
+      { "type": "image", "key": "wood-door-right", "url": "wood-door-right.png" },
+      { "type": "image", "key": "wood-door-left", "url": "wood-door-left.png" },
+      { "type": "image", "key": "wood-floor", "url": "wood-floor.jpg" },
+      { "type": "image", "key": "flowers", "url": "flowers.png" },
+      { "type": "image", "key": "grass", "url": "grass.png" },
+      { "type": "image", "key": "window", "url": "window.png" },
+      { "type": "image", "key": "green-carpet", "url": "green-carpet.png" },
+      { "type": "image", "key": "wall-side-part", "url": "wall-side-part.jpg" },
+      { "type": "image", "key": "top-door-wall", "url": "top-door-wall.png" },
+      { "type": "image", "key": "door-vertical-object", "url": "door-vertical.png" },
+      { "type": "image", "key": "wood-door-right-object", "url": "wood-door-right.png" },
+      { "type": "image", "key": "white-chair-down", "url": "white-chair-down.png" },
+      { "type": "image", "key": "white-chair-down-object", "url": "white-chair-down.png" },
+      { "type": "image", "key": "round-table-object", "url": "round-table.png" },
+      { "type": "image", "key": "white-chair-right-object", "url": "white-chair-right.png" },
+      { "type": "image", "key": "white-char-up-object", "url": "white-char-up.png" },
+      { "type": "image", "key": "scene-floor-bottom", "url": "scene-floor-bottom.png" },
+      { "type": "image", "key": "deskboard", "url": "deskboard.png" },
+      { "type": "image", "key": "microphone-object", "url": "microphone.png" },
+      { "type": "image", "key": "flower", "url": "flower.png" },
+      { "type": "image", "key": "chair", "url": "chair.png" },
+      { "type": "image", "key": "left-half-table-object", "url": "left-half-table.png" },
+      { "type": "image", "key": "right-half-table-object", "url": "right-half-table.png" },
+      { "type": "image", "key": "middle-part-table-object", "url": "middle-part-table.png" },
+      { "type": "image", "key": "table", "url": "table.png" },
+      { "type": "image", "key": "chair-up", "url": "chair-up.png" },
+      { "type": "image", "key": "chair-down", "url": "chair-down.png" },
+      { "type": "image", "key": "small-flower", "url": "small-flower.png" },
+      { "type": "image", "key": "mac-up", "url": "mac-up.png" },
+      { "type": "image", "key": "red-bean-bag-chair-left", "url": "red-bean-bag-chair-left.png" },
+      { "type": "image", "key": "red-bean-bag-chair-down", "url": "red-bean-bag-chair-down.png" },
+      { "type": "image", "key": "small-white-desk", "url": "small-white-desk.png" },
+      { "type": "image", "key": "flower-2", "url": "flower-2.png" },
+      { "type": "image", "key": "soft-chair", "url": "soft-chair.png" },
+      { "type": "image", "key": "double-desk", "url": "double-desk.png" },
+      { "type": "image", "key": "chess-table", "url": "chess-table.png" },
+      { "type": "image", "key": "mramor-table", "url": "mramor-table.png" },
+      { "type": "image", "key": "green-chair-down", "url": "green-chair-down.png" },
+      { "type": "image", "key": "green-chair-up", "url": "green-chair-up.png" },
+      { "type": "image", "key": "welcome", "url": "welcome.png" }
+    ]
+  }
+]

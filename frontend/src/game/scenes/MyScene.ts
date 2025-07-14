@@ -98,7 +98,6 @@ export class MyScene extends Phaser.Scene {
         // console.log("Map: ", this.map);
         this.createFogLayer();
         this.createMap(this.map);
-        console.log(this.objectsByZoneId)
         this.setupCamera();
         this.setupCameraDrag(this.cameras.main);
         this.setupCameraZoom(this.cameras.main);
@@ -275,8 +274,11 @@ export class MyScene extends Phaser.Scene {
             gid: tiledObject.gid,
             properties: getTiledProperties(tiledObject.properties),
             frame: tiledObject.gid ? undefined : 0, // Use frame 0 if no GID
+            flipDiagonally: tiledObject.flippedAntiDiagonal,
+            flipX: tiledObject.flippedHorizontal,
+            flipY: tiledObject.flippedVertical,
         };
-
+       
         const gameObject = new GameObject(this, gameObjectConfig);
         this.gameObjects.push(gameObject);
     }
@@ -290,13 +292,18 @@ export class MyScene extends Phaser.Scene {
             width: tiledObject.width,
             height: tiledObject.height,
             id: tiledObject.id,
+            gid: tiledObject.gid,
             texture: getTextureFromGid(this.map, tiledObject.gid),
             isOpen:
                 getTiledPropertyByName<boolean>(proprieties, "isOpen") || false,
             zoneId: zoneId,
             properties: proprieties,
+            flipDiagonally: tiledObject.flippedAntiDiagonal,
+            flipX: tiledObject.flippedHorizontal,
+            flipY: tiledObject.flippedVertical,
         });
         this.doorObjects.push(door);
+        console.log("Creating door with size:", tiledObject.width, tiledObject.height);
     }
 
     private setupColliders() {

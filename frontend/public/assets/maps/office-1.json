@@ -775,7 +775,7 @@
         {
          "columns":10,
          "firstgid":1,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/glass-wooden-wall.png",
+         "image":"..\/..\/..\/Downloads\/exported\/glass-wooden-wall.png",
          "imageheight":140,
          "imagewidth":100,
          "margin":0,
@@ -788,7 +788,7 @@
         {
          "columns":1,
          "firstgid":141,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/collision.png",
+         "image":"..\/..\/..\/Downloads\/exported\/collision.png",
          "imageheight":10,
          "imagewidth":10,
          "margin":0,
@@ -801,7 +801,7 @@
         {
          "columns":10,
          "firstgid":142,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/wall.png",
+         "image":"..\/..\/..\/Downloads\/exported\/wall.png",
          "imageheight":140,
          "imagewidth":100,
          "margin":0,
@@ -814,7 +814,7 @@
         {
          "columns":12,
          "firstgid":282,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/wood-door-right.png",
+         "image":"..\/..\/..\/Downloads\/exported\/wood-door-right.png",
          "imageheight":120,
          "imagewidth":120,
          "margin":0,
@@ -827,7 +827,7 @@
         {
          "columns":12,
          "firstgid":426,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/wood-door-left.png",
+         "image":"..\/..\/..\/Downloads\/exported\/wood-door-left.png",
          "imageheight":120,
          "imagewidth":120,
          "margin":0,
@@ -840,7 +840,7 @@
         {
          "columns":40,
          "firstgid":570,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/wood-floor.jpg",
+         "image":"..\/..\/..\/Downloads\/exported\/wood-floor.jpg",
          "imageheight":400,
          "imagewidth":400,
          "margin":0,
@@ -853,7 +853,7 @@
         {
          "columns":34,
          "firstgid":2170,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/flowers.png",
+         "image":"..\/..\/..\/Downloads\/exported\/flowers.png",
          "imageheight":340,
          "imagewidth":340,
          "margin":0,
@@ -866,7 +866,7 @@
         {
          "columns":20,
          "firstgid":3326,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/grass.png",
+         "image":"..\/..\/..\/Downloads\/exported\/grass.png",
          "imageheight":200,
          "imagewidth":200,
          "margin":0,
@@ -879,7 +879,7 @@
         {
          "columns":16,
          "firstgid":3726,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/window.png",
+         "image":"..\/..\/..\/Downloads\/exported\/window.png",
          "imageheight":300,
          "imagewidth":160,
          "margin":0,
@@ -892,7 +892,7 @@
         {
          "columns":40,
          "firstgid":4206,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/green-carpet.png",
+         "image":"..\/..\/..\/Downloads\/exported\/green-carpet.png",
          "imageheight":400,
          "imagewidth":400,
          "margin":0,
@@ -905,7 +905,7 @@
         {
          "columns":2,
          "firstgid":5806,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/wall-side-part.jpg",
+         "image":"..\/..\/..\/Downloads\/exported\/wall-side-part.jpg",
          "imageheight":140,
          "imagewidth":20,
          "margin":0,
@@ -918,7 +918,7 @@
         {
          "columns":2,
          "firstgid":5834,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/top-door-wall.png",
+         "image":"..\/..\/..\/Downloads\/exported\/top-door-wall.png",
          "imageheight":220,
          "imagewidth":20,
          "margin":0,
@@ -931,7 +931,7 @@
         {
          "columns":1,
          "firstgid":5878,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/door-vertical.png",
+         "image":"..\/..\/..\/Downloads\/exported\/door-vertical.png",
          "imageheight":220,
          "imagewidth":20,
          "margin":0,
@@ -944,7 +944,7 @@
         {
          "columns":1,
          "firstgid":5879,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/wood-door-right.png",
+         "image":"..\/..\/..\/Downloads\/exported\/wood-door-right.png",
          "imageheight":120,
          "imagewidth":120,
          "margin":0,
@@ -957,7 +957,7 @@
         {
          "columns":30,
          "firstgid":5880,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/white-chair-down.png",
+         "image":"..\/..\/..\/Downloads\/exported\/white-chair-down.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,
@@ -970,7 +970,7 @@
         {
          "columns":1,
          "firstgid":6780,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/white-chair-down.png",
+         "image":"..\/..\/..\/Downloads\/exported\/white-chair-down.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,
@@ -983,7 +983,7 @@
         {
          "columns":1,
          "firstgid":6781,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/round-table.png",
+         "image":"..\/..\/..\/Downloads\/exported\/round-table.png",
          "imageheight":240,
          "imagewidth":240,
          "margin":0,
@@ -996,7 +996,7 @@
         {
          "columns":1,
          "firstgid":6782,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/white-chair-right.png",
+         "image":"..\/..\/..\/Downloads\/exported\/white-chair-right.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,
@@ -1009,7 +1009,7 @@
         {
          "columns":1,
          "firstgid":6783,
-         "image":"..\/..\/..\/Downloads\/kumospace-exported\/white-char-up.png",
+         "image":"..\/..\/..\/Downloads\/exported\/white-char-up.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,

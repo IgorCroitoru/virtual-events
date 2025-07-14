@@ -154,7 +154,7 @@ const User = forwardRef<HTMLDivElement, UserProps>(
                 >
                     <div className="truncate text-center">{user.name}</div>
                     {isMicroMuted && (
-                        <Icons.micOff className="bg-red-500 rounded-full w-4 h-4 flex-shrink-0" />
+                        <Icons.micOff className="bg-red-500 rounded-full w-3 h-3 flex-shrink-0" />
                     )}
                 </div>
 
