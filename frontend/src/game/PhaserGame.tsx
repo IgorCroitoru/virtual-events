@@ -37,7 +37,6 @@ export const PhaserGame = forwardRef<IRefPhaserGame, IProps>(function PhaserGame
     const containerRef = useRef<HTMLDivElement>(null);
     const currentSceneRef = useRef<Phaser.Scene | null>(null);
 
-    const { users } = useChannelStore();
     useLayoutEffect(() => {
         if (game.current === null) {
             game.current = StartGame("game-container");

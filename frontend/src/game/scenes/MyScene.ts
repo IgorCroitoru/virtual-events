@@ -77,10 +77,31 @@ export class MyScene extends Phaser.Scene {
     preload() {
         // this.load.image("grass", "tiles/grass.png");
         // this.load.image("wood-floor-100px", "tiles/wood-floor-100px.png");
-        this.load.pack(
-            ASSET_PACK_KEYS.MAIN,
+        
+        // Check if the map is already loaded
+        if (this.cache.tilemap.has(this.cfg.name)) {
+            console.log(`Map ${this.cfg.name} already exists in cache`);
+            return;
+        }
+        
+        const rsp = this.load.pack(
+            this.cfg.name,
             `assets/data/${this.cfg.name}/assets.json`
         );
+        console.log("Loading assets for scene: ", this.cfg.name, rsp);
+        
+        // Ensure the map is loaded
+        this.load.on('complete', () => {
+            if (!this.cache.tilemap.has(this.cfg.name)) {
+                console.error(`Failed to load map: ${this.cfg.name}`);
+            } else {
+                console.log(`Successfully loaded map: ${this.cfg.name}`);
+            }
+            console.log(`Available maps in cache:`, 
+                this.cache.tilemap.getKeys());
+        });
+        
+        // Load the map
         // this.load.json(
         //     "layerOrder",
         //     `assets/data/${this.cfg.name}/layers-order.json`
@@ -91,11 +112,20 @@ export class MyScene extends Phaser.Scene {
             console.warn("Phaser keyboard plugin is not setup properly.");
             return;
         }
+        
+        // Check if the map exists before trying to create it
+        if (!this.cache.tilemap.has(this.cfg.name)) {
+            console.error(`Map ${this.cfg.name} not found in cache. Available maps:`, 
+                this.cache.tilemap.getKeys());
+            return;
+        }
+        
         this.customEvents = new GameEventEmitter(this.events);
         this.cursors = this.input.keyboard?.createCursorKeys();
         this.objectsByZoneId = {};
         this.map = this.make.tilemap({ key: this.cfg.name });
-        // console.log("Map: ", this.map);
+        console.log("Map created successfully: ", this.map);
+        
         this.createFogLayer();
         this.createMap(this.map);
         this.setupCamera();

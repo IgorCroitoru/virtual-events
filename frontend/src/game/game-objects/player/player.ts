@@ -19,7 +19,7 @@ export class Player extends CharacterGameObject {
   private _collidingObjectsComponent: CollidingObjectsComponent;
   private _cursors: Phaser.Types.Input.Keyboard.CursorKeys | undefined;
   private _isLocal: boolean;
-  private _lerpFactor: number = 0.3;
+  private _lerpFactor: number = 0.1;
   private _lastPosition: Position = { x: 0, y: 0 };
   private _id: any
   constructor(config: PlayerConfig) {

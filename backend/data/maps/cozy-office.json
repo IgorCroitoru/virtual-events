@@ -629,7 +629,6 @@
         {
          "draworder":"topdown",
          "id":48,
-         "locked":true,
          "name":"closed-door-zone-3",
          "objects":[
                 {
@@ -641,7 +640,7 @@
                         {
                          "name":"isOpen",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }, 
                         {
                          "name":"zindex",
@@ -662,14 +661,13 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"topdown",
          "id":34,
-         "locked":true,
          "name":"desk-chair",
          "objects":[
                 {
@@ -1004,7 +1002,7 @@
                         {
                          "name":"isOpen",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }, 
                         {
                          "name":"z-index",
@@ -1627,7 +1625,6 @@
         {
          "draworder":"topdown",
          "id":28,
-         "locked":true,
          "name":"zones",
          "objects":[
                 {
@@ -1668,44 +1665,8 @@
                 }, 
                 {
                  "gid":141,
-                 "height":570.333333333333,
-                 "id":83,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"id",
-                         "type":"int",
-                         "value":3
-                        }],
-                 "rotation":90,
-                 "type":"zone",
-                 "visible":true,
-                 "width":240,
-                 "x":9.33333333333337,
-                 "y":10.6666666666666
-                }, 
-                {
-                 "gid":141,
-                 "height":347.666333333333,
-                 "id":84,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"id",
-                         "type":"int",
-                         "value":4
-                        }],
-                 "rotation":90,
-                 "type":"zone",
-                 "visible":true,
-                 "width":502.666666666667,
-                 "x":10.6666666666667,
-                 "y":256.166833333333
-                }, 
-                {
-                 "gid":141,
-                 "height":567.666333333333,
-                 "id":85,
+                 "height":407,
+                 "id":101,
                  "name":"",
                  "properties":[
                         {
@@ -1713,16 +1674,52 @@
                          "type":"int",
                          "value":5
                         }],
-                 "rotation":90,
+                 "rotation":0,
                  "type":"zone",
                  "visible":true,
-                 "width":405.333333333333,
-                 "x":12,
-                 "y":782.8335
+                 "width":347.166666666667,
+                 "x":11,
+                 "y":1188.66666666667
+                }, 
+                {
+                 "gid":141,
+                 "height":499,
+                 "id":102,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"id",
+                         "type":"int",
+                         "value":4
+                        }],
+                 "rotation":0,
+                 "type":"zone",
+                 "visible":true,
+                 "width":347.167,
+                 "x":11.4165,
+                 "y":758.5
+                }, 
+                {
+                 "gid":141,
+                 "height":232,
+                 "id":103,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"id",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"zone",
+                 "visible":true,
+                 "width":567.167,
+                 "x":11.4165,
+                 "y":239.5
                 }],
          "opacity":0.13,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -1752,8 +1749,8 @@
             1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
             1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
             1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
-            1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
-            1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
+            1610612877, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
+            1610612877, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
             1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
             1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
             1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
@@ -1804,8 +1801,8 @@
             1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
             1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
             1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
-            1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
-            1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
+            1610612877, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877, 1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
+            1610612877, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
             1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
             1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
             1610612877, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1610612877,
@@ -1850,7 +1847,6 @@
             1610612877, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 141, 1610612877],
          "height":120,
          "id":27,
-         "locked":true,
          "name":"collides",
          "opacity":0.47,
          "properties":[
@@ -1860,13 +1856,13 @@
                  "value":100
                 }],
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":120,
          "x":0,
          "y":0
         }],
  "nextlayerid":50,
- "nextobjectid":101,
+ "nextobjectid":104,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -1886,7 +1882,7 @@
         {
          "columns":10,
          "firstgid":1,
-         "image":"..\/..\/..\/Downloads\/exported\/glass-wooden-wall.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/glass-wooden-wall.png",
          "imageheight":140,
          "imagewidth":100,
          "margin":0,
@@ -1899,7 +1895,7 @@
         {
          "columns":1,
          "firstgid":141,
-         "image":"..\/..\/..\/Downloads\/exported\/collision.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/collision.png",
          "imageheight":10,
          "imagewidth":10,
          "margin":0,
@@ -1912,7 +1908,7 @@
         {
          "columns":10,
          "firstgid":142,
-         "image":"..\/..\/..\/Downloads\/exported\/wall.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/wall.png",
          "imageheight":140,
          "imagewidth":100,
          "margin":0,
@@ -1925,7 +1921,7 @@
         {
          "columns":12,
          "firstgid":282,
-         "image":"..\/..\/..\/Downloads\/exported\/wood-door-right.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/wood-door-right.png",
          "imageheight":120,
          "imagewidth":120,
          "margin":0,
@@ -1938,7 +1934,7 @@
         {
          "columns":12,
          "firstgid":426,
-         "image":"..\/..\/..\/Downloads\/exported\/wood-door-left.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/wood-door-left.png",
          "imageheight":120,
          "imagewidth":120,
          "margin":0,
@@ -1951,7 +1947,7 @@
         {
          "columns":40,
          "firstgid":570,
-         "image":"..\/..\/..\/Downloads\/exported\/wood-floor.jpg",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/wood-floor.jpg",
          "imageheight":400,
          "imagewidth":400,
          "margin":0,
@@ -1964,7 +1960,7 @@
         {
          "columns":34,
          "firstgid":2170,
-         "image":"..\/..\/..\/Downloads\/exported\/flowers.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/flowers.png",
          "imageheight":340,
          "imagewidth":340,
          "margin":0,
@@ -1977,7 +1973,7 @@
         {
          "columns":20,
          "firstgid":3326,
-         "image":"..\/..\/..\/Downloads\/exported\/grass.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/grass.png",
          "imageheight":200,
          "imagewidth":200,
          "margin":0,
@@ -1990,7 +1986,7 @@
         {
          "columns":16,
          "firstgid":3726,
-         "image":"..\/..\/..\/Downloads\/exported\/window.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/window.png",
          "imageheight":300,
          "imagewidth":160,
          "margin":0,
@@ -2003,7 +1999,7 @@
         {
          "columns":40,
          "firstgid":4206,
-         "image":"..\/..\/..\/Downloads\/exported\/green-carpet.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/green-carpet.png",
          "imageheight":400,
          "imagewidth":400,
          "margin":0,
@@ -2016,7 +2012,7 @@
         {
          "columns":2,
          "firstgid":5806,
-         "image":"..\/..\/..\/Downloads\/exported\/wall-side-part.jpg",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/wall-side-part.jpg",
          "imageheight":140,
          "imagewidth":20,
          "margin":0,
@@ -2029,7 +2025,7 @@
         {
          "columns":2,
          "firstgid":5834,
-         "image":"..\/..\/..\/Downloads\/exported\/top-door-wall.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/top-door-wall.png",
          "imageheight":220,
          "imagewidth":20,
          "margin":0,
@@ -2042,7 +2038,7 @@
         {
          "columns":1,
          "firstgid":5878,
-         "image":"..\/..\/..\/Downloads\/exported\/door-vertical.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/door-vertical.png",
          "imageheight":220,
          "imagewidth":20,
          "margin":0,
@@ -2055,7 +2051,7 @@
         {
          "columns":1,
          "firstgid":5879,
-         "image":"..\/..\/..\/Downloads\/exported\/wood-door-right.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/wood-door-right.png",
          "imageheight":120,
          "imagewidth":120,
          "margin":0,
@@ -2068,7 +2064,7 @@
         {
          "columns":30,
          "firstgid":5880,
-         "image":"..\/..\/..\/Downloads\/exported\/white-chair-down.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/white-chair-down.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,
@@ -2081,7 +2077,7 @@
         {
          "columns":1,
          "firstgid":6780,
-         "image":"..\/..\/..\/Downloads\/exported\/white-chair-down.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/white-chair-down.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,
@@ -2094,7 +2090,7 @@
         {
          "columns":1,
          "firstgid":6781,
-         "image":"..\/..\/..\/Downloads\/exported\/round-table.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/round-table.png",
          "imageheight":240,
          "imagewidth":240,
          "margin":0,
@@ -2107,7 +2103,7 @@
         {
          "columns":1,
          "firstgid":6782,
-         "image":"..\/..\/..\/Downloads\/exported\/white-chair-right.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/white-chair-right.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,
@@ -2120,7 +2116,7 @@
         {
          "columns":1,
          "firstgid":6783,
-         "image":"..\/..\/..\/Downloads\/exported\/white-char-up.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/white-char-up.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,
@@ -2133,7 +2129,7 @@
         {
          "columns":30,
          "firstgid":6784,
-         "image":"..\/..\/..\/Downloads\/exported\/scene-floor-bottom.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/scene-floor-bottom.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,
@@ -2146,7 +2142,7 @@
         {
          "columns":1,
          "firstgid":7684,
-         "image":"..\/..\/..\/Downloads\/exported\/deskboard.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/deskboard.png",
          "imageheight":280,
          "imagewidth":280,
          "margin":0,
@@ -2159,7 +2155,7 @@
         {
          "columns":1,
          "firstgid":7685,
-         "image":"..\/..\/..\/Downloads\/exported\/microphone.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/microphone.png",
          "imageheight":200,
          "imagewidth":200,
          "margin":0,
@@ -2172,7 +2168,7 @@
         {
          "columns":1,
          "firstgid":7686,
-         "image":"..\/..\/..\/Downloads\/exported\/flower.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/flower.png",
          "imageheight":240,
          "imagewidth":240,
          "margin":0,
@@ -2185,7 +2181,7 @@
         {
          "columns":1,
          "firstgid":7687,
-         "image":"..\/..\/..\/Downloads\/exported\/chair.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/chair.png",
          "imageheight":180,
          "imagewidth":180,
          "margin":0,
@@ -2198,7 +2194,7 @@
         {
          "columns":1,
          "firstgid":7688,
-         "image":"..\/..\/..\/Downloads\/exported\/left-half-table.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/left-half-table.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,
@@ -2211,7 +2207,7 @@
         {
          "columns":1,
          "firstgid":7689,
-         "image":"..\/..\/..\/Downloads\/exported\/right-half-table.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/right-half-table.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,
@@ -2224,7 +2220,7 @@
         {
          "columns":1,
          "firstgid":7690,
-         "image":"..\/..\/..\/Downloads\/exported\/middle-part-table.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/middle-part-table.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,
@@ -2237,7 +2233,7 @@
         {
          "columns":1,
          "firstgid":7691,
-         "image":"..\/..\/..\/Downloads\/exported\/table.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/table.png",
          "imageheight":260,
          "imagewidth":260,
          "margin":0,
@@ -2250,7 +2246,7 @@
         {
          "columns":1,
          "firstgid":7692,
-         "image":"..\/..\/..\/Downloads\/exported\/chair-up.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/chair-up.png",
          "imageheight":180,
          "imagewidth":180,
          "margin":0,
@@ -2263,7 +2259,7 @@
         {
          "columns":1,
          "firstgid":7693,
-         "image":"..\/..\/..\/Downloads\/exported\/chair-down.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/chair-down.png",
          "imageheight":180,
          "imagewidth":180,
          "margin":0,
@@ -2276,7 +2272,7 @@
         {
          "columns":1,
          "firstgid":7694,
-         "image":"..\/..\/..\/Downloads\/exported\/small-flower.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/small-flower.png",
          "imageheight":80,
          "imagewidth":60,
          "margin":0,
@@ -2289,7 +2285,7 @@
         {
          "columns":1,
          "firstgid":7695,
-         "image":"..\/..\/..\/Downloads\/exported\/mac-up.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/mac-up.png",
          "imageheight":140,
          "imagewidth":140,
          "margin":0,
@@ -2302,7 +2298,7 @@
         {
          "columns":1,
          "firstgid":7696,
-         "image":"..\/..\/..\/Downloads\/exported\/red-bean-bag-chair-left.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/red-bean-bag-chair-left.png",
          "imageheight":220,
          "imagewidth":220,
          "margin":0,
@@ -2315,7 +2311,7 @@
         {
          "columns":1,
          "firstgid":7697,
-         "image":"..\/..\/..\/Downloads\/exported\/red-bean-bag-chair-down.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/red-bean-bag-chair-down.png",
          "imageheight":220,
          "imagewidth":220,
          "margin":0,
@@ -2328,7 +2324,7 @@
         {
          "columns":1,
          "firstgid":7698,
-         "image":"..\/..\/..\/Downloads\/exported\/small-white-desk.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/small-white-desk.png",
          "imageheight":160,
          "imagewidth":160,
          "margin":0,
@@ -2341,7 +2337,7 @@
         {
          "columns":1,
          "firstgid":7699,
-         "image":"..\/..\/..\/Downloads\/exported\/flower-2.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/flower-2.png",
          "imageheight":240,
          "imagewidth":240,
          "margin":0,
@@ -2354,7 +2350,7 @@
         {
          "columns":1,
          "firstgid":7700,
-         "image":"..\/..\/..\/Downloads\/exported\/soft-chair.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/soft-chair.png",
          "imageheight":200,
          "imagewidth":200,
          "margin":0,
@@ -2367,7 +2363,7 @@
         {
          "columns":1,
          "firstgid":7701,
-         "image":"..\/..\/..\/Downloads\/exported\/double-desk.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/double-desk.png",
          "imageheight":300,
          "imagewidth":300,
          "margin":0,
@@ -2380,7 +2376,7 @@
         {
          "columns":1,
          "firstgid":7702,
-         "image":"..\/..\/..\/Downloads\/exported\/chess-table.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/chess-table.png",
          "imageheight":400,
          "imagewidth":400,
          "margin":0,
@@ -2393,7 +2389,7 @@
         {
          "columns":1,
          "firstgid":7703,
-         "image":"..\/..\/..\/Downloads\/exported\/mramor-table.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/mramor-table.png",
          "imageheight":400,
          "imagewidth":400,
          "margin":0,
@@ -2406,7 +2402,7 @@
         {
          "columns":1,
          "firstgid":7704,
-         "image":"..\/..\/..\/Downloads\/exported\/green-chair-down.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/green-chair-down.png",
          "imageheight":180,
          "imagewidth":180,
          "margin":0,
@@ -2419,7 +2415,7 @@
         {
          "columns":1,
          "firstgid":7705,
-         "image":"..\/..\/..\/Downloads\/exported\/green-chair-up.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/green-chair-up.png",
          "imageheight":180,
          "imagewidth":180,
          "margin":0,
@@ -2432,7 +2428,7 @@
         {
          "columns":1,
          "firstgid":7706,
-         "image":"..\/..\/..\/Downloads\/exported\/welcome.png",
+         "image":"..\/..\/..\/Downloads\/kumospace-exported\/welcome.png",
          "imageheight":160,
          "imagewidth":160,
          "margin":0,
