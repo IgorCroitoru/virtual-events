@@ -25,7 +25,7 @@ export function useColyseus() {
     // ✅ Initialize Colyseus Client Once
     useEffect(() => {
         if (!clientRef.current) {
-            clientRef.current = new Client("ws://localhost:2567"); // Set your server URL
+            clientRef.current = new Client(process.env.NEXT_PUBLIC_COLYSEUS_API); // Set your server URL
             
         }
     }, []);

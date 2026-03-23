@@ -2,17 +2,8 @@ import { forwardRef, useEffect, useLayoutEffect, useRef } from 'react';
 import StartGame from './main';
 
 import { EventBus } from './Events';
-import Player from '../components/ui/Player';
-import { MainMenu } from './scenes/MainMenu';
-import GameConfig from '../../game-config';
-import { set } from 'react-hook-form';
-import { stat } from 'fs';
-import TestScene from './scenes/TestScene';
 import { MyScene } from './scenes/MyScene';
 import { Toaster } from '@/components/ui/toaster';
-import { ParticipantTile, TrackLoop, useTracks } from '@livekit/components-react';
-import { Track } from 'livekit-client';
-import PlayerVideo from '@/components/ui/Player2';
 import { useChannelStore } from '@/store/useChannelStore';
 import { UserRenderer } from '@/components/User/UserRenderer';
 

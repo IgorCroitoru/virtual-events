@@ -16,9 +16,12 @@ import { RolesGuard } from './auth/guards/roles.guard';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
+     ConfigModule.forRoot({
+      envFilePath: `.env`,
+      isGlobal: true,
+    }),
     EventEmitterModule.forRoot(), // Add global event emitter
-    MongooseModule.forRoot('mongodb://localhost:27017/phaser_chat'),
+    MongooseModule.forRoot(process.env.MONGODB_URI),
     // Global JWT configuration to avoid circular dependencies
     JwtModule.registerAsync({
       imports: [ConfigModule],

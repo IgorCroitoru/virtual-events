@@ -7,7 +7,7 @@ export type SignInData = {
     fullName: string
     email: string
     password: string
-    verificationCode: string
+    // verificationCode: string
   }
   
   export type Credentials = {

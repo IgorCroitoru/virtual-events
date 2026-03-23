@@ -43,7 +43,10 @@ export class Player extends CharacterGameObject {
       }
     this.setupPhysics();
     this.setDepth(100);
-    //this.setVisible(false);
+
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    this.setVisible(isDevelopment);
+    
     // add components
     this._collidingObjectsComponent = new CollidingObjectsComponent(this);
 

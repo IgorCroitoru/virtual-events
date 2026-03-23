@@ -1,7 +1,5 @@
 "use client"
 import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/router";
-import { useDeviceSelection } from "@/context/DeviceSelectionContext";
 import { createLocalVideoTrack, createLocalAudioTrack } from "livekit-client";
 // import { useMediaStream } from "@/context/MediaStreamContext";
 import { Button } from "@/components/ui/button";

@@ -1,36 +1,26 @@
 import GameConfig from "../../../game-config";
-import { ASSET_KEYS, ASSET_PACK_KEYS } from "../common/assets";
 import {
     OBJECT_TYPES,
     TILED_LAYER_NAMES,
-    TILED_OBJECT_PROPERTY,
-    TILED_TILESET_NAMES,
+    TILED_OBJECT_PROPERTY
 } from "../common/tiled/common";
 import {
-    getAllLayerNamesWithPrefix,
-    getTextureFromGid,
-    getTiledDoorObjectsFromLayer,
-    getTiledProperties,
-    getTiledPropertyByName,
-    getTiledZoneObjectsFromLayer,
-    isValidObject,
-    toTiledZoneObject,
+    getTextureFromGid, getTiledProperties,
+    getTiledPropertyByName, isValidObject,
+    toTiledZoneObject
 } from "../common/tiled/tiled-utils";
 import { TiledZoneObject } from "../common/tiled/types";
 import { EventBus, GameEventEmitter } from "../Events";
 import { Door } from "../game-objects/objects/door-object";
-import { DoorGroup } from "../game-objects/objects/door-group";
 import { Player } from "../game-objects/player/player";
 import { RoomZone } from "../game-objects/objects/zone";
 import { PLAYER_VISION_MASK_SIZE } from "../common/config";
 import { GameEvents } from "../common/common";
-import { userRefsManager } from "@/user/UserRefsManager";
-import { PlayerPositionUpdate, Position } from "../common/types";
+import { PlayerPositionUpdate } from "../common/types";
 import {
     GameObject,
     GameObjectConfig,
 } from "../game-objects/objects/game-object";
-import { get } from "http";
 
 export class MyScene extends Phaser.Scene {
     public customEvents: GameEventEmitter;
@@ -75,9 +65,6 @@ export class MyScene extends Phaser.Scene {
         this.cfg = data.cfg;
     }
     preload() {
-        // this.load.image("grass", "tiles/grass.png");
-        // this.load.image("wood-floor-100px", "tiles/wood-floor-100px.png");
-        
         // Check if the map is already loaded
         if (this.cache.tilemap.has(this.cfg.name)) {
             console.log(`Map ${this.cfg.name} already exists in cache`);
@@ -100,12 +87,6 @@ export class MyScene extends Phaser.Scene {
             console.log(`Available maps in cache:`, 
                 this.cache.tilemap.getKeys());
         });
-        
-        // Load the map
-        // this.load.json(
-        //     "layerOrder",
-        //     `assets/data/${this.cfg.name}/layers-order.json`
-        // );
     }
     create() {
         if (!this.input.keyboard) {

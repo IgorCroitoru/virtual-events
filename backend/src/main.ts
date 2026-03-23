@@ -4,13 +4,17 @@ import { createServer } from 'http';
 import { Server } from 'colyseus';
 import { WebSocketTransport } from '@colyseus/ws-transport';
 import { GameRoom, RoomState } from './game/game.room';
-import { BadRequestException, ValidationError, ValidationPipe } from '@nestjs/common';
+import { BadRequestException, Logger, ValidationError, ValidationPipe } from '@nestjs/common';
 import * as cookieParser from 'cookie-parser';
 import { UserService } from './user/user.service';
 import { JwtService } from '@nestjs/jwt';
 import { ChannelsService } from './channel/channel.service';
+import { ConfigService } from '@nestjs/config';
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const config = app.get(ConfigService);
+  const logger = new Logger('Bootstrap');
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
@@ -39,10 +43,25 @@ async function bootstrap() {
     }),
   );
   app.use(cookieParser());
+
+
+  const allowedOrigins = (config.get<string>('CORS_ORIGINS') || '')
+    .split(',')
+    .map((o) => o.trim())
+    .filter(Boolean);
+  logger.log("Allowed CORS origins: " + process.env.CORS_ORIGINS);
   app.enableCors({
-    origin: 'http://localhost:8080',
+    origin: (origin, callback) => {
+      // allow non-browser clients / same-origin server calls
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error('Not allowed by CORS'), false);
+    },
     credentials: true,
-  })
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  });
+
   const server = createServer();
   const gameServer = new Server({
     transport: new WebSocketTransport({ server }),
@@ -57,6 +76,9 @@ async function bootstrap() {
   // gameServer.define('game_room', GameRoom);
   // gameServer.define('game_room2', GameRoom)
   gameServer.define('channel', GameRoom).filterBy(["channelId"])
+
+  app.setGlobalPrefix('api');
+  
   await gameServer.listen(2567);
   await app.listen(3000);
 }

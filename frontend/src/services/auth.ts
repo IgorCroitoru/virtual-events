@@ -5,7 +5,6 @@ import { useAuthStore } from '@/store/useAuthStore'
 import { Credentials, SignInData, SignUpData } from '@/types/auth'
 import axios, { AxiosInstance } from 'axios'
 import { set } from 'react-hook-form'
-import { webSocketService } from './websocket'
 
 export class AuthService {
   private instance: AxiosInstance
@@ -30,7 +29,7 @@ export class AuthService {
 
   public async register(signUpData: SignUpData) {
     return this.instance
-      .post<Credentials & {user :UserDto}>('auth/register-with-code', signUpData)
+      .post<Credentials & {user :UserDto}>('auth/register', signUpData)
       .then(({ data: user }) => user)
       .catch((error) => Promise.reject(error))
   }
@@ -46,9 +45,7 @@ export class AuthService {
     return this.instance
       .post<void>('auth/logout')
       .then(() => {
-        webSocketService.forceDisconnect();
         useAuthStore.getState().logout()
-
       })
       .catch((error) => Promise.reject(error))
   }

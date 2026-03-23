@@ -2,9 +2,10 @@
 import { useAuthStore } from "@/store/useAuthStore"
 import axios from "axios"
 import Router from "next/router"
+import { NEXT_PUBLIC_BACKEND_BASE_API } from "../../config"
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_AUTH_SERVER_URL,
+  baseURL: NEXT_PUBLIC_BACKEND_BASE_API + "/api",
   withCredentials: true,
 })
 
@@ -40,7 +41,7 @@ api.interceptors.response.use(
         isRefreshing = true
         try {
           const refreshRes = await axios.post(
-            `${process.env.NEXT_PUBLIC_AUTH_SERVER_URL}/auth/refresh`,
+            `${process.env.NEXT_PUBLIC_BACKEND_BASE_API}/auth/refresh`,
             {},
             { withCredentials: true }
           )

@@ -136,8 +136,10 @@ export const ChannelManager = () => {
         const currentToken = useAuthStore.getState().accessToken;
         try {
             const response = await joinChannel(channel.id)
+            console.log("Join channel response:", response);
             if(response.success && channel.id === response.channelId) {
                 //joining game room
+                console.log("Joining colyseus room")
                 await joinRoom("channel", {
                 // mapId: channel.mapName,
                 token: currentToken,

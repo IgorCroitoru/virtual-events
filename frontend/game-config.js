@@ -18,11 +18,6 @@ const GameConfig = {
     // Dragging (Grabbing) Sensitivity
     dragFriction: 0.9, // Controls inertia slowdown
     dragSmoothness: 16, // Delay per frame for smoothing
-    
-
-
-    //temp
-    TEMP_TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2RjODBjOThkOTNkZGE4ZWVhMWJkZWEiLCJmdWxsTmFtZSI6IklvbiBTYW1hY2F0IiwiZW1haWwiOiJpZ29yMTIzNEBtYWlsLmNvbSIsInJvbGVzIjpbInVzZXIiXSwiY3JlYXRlZEF0IjoiMjAyNS0wMy0yMFQyMDo1NTozNy42MjZaIiwidXBkYXRlZEF0IjoiMjAyNS0wMy0yMFQyMDo1NTozNy42MjZaIiwiX192IjowLCJpYXQiOjE3NDQxNDIzNTgsImV4cCI6MTc0NDE4NTU1OH0.JbDvUkMKgoaqu10JGAFtC2skaHrLv8lKHkSRHe5M4_Q"
 };
 
 export default GameConfig;

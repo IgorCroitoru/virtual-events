@@ -13,8 +13,6 @@ import { Input } from "@/components/ui/custom-input"
 import { Label } from "@/components/ui/label"
 import { Icons } from "@/components/icons"
 import { userAuthSchema } from "@/lib/validations/auth"
-import { NEXT_PUBLIC_AUTH_SERVER_URL } from "../../config"
-import api from "@/lib/axios"
 import { authService } from "@/services/auth"
 import { useRouter } from "next/navigation"
 
@@ -45,14 +43,13 @@ export function UserAuthForm({ className, isRegister = false, ...props }: UserAu
   const email = watch('email')
   const password = watch('password')
   const confirmPassword = watch('confirmPassword')
-  const verificationCode = watch('verificationCode')
   const fullName = watch('fullName')
 
   // Check if passwords match
   const passwordsMatch = password === confirmPassword
   
   // Check if all fields are valid for registration
-  const canRegister = email && password && confirmPassword && passwordsMatch && verificationCode && fullName && isCodeSent
+  const canRegister = email && password && confirmPassword && passwordsMatch && fullName
   
   const handleSendCode = async () => {
     // Validate email using Zod before making the request
@@ -100,20 +97,20 @@ export function UserAuthForm({ className, isRegister = false, ...props }: UserAu
           throw new Error("Parolele nu se potrivesc")
         }
 
-        if (!isCodeSent) {
-          throw new Error("Te rog trimite codul de verificare mai întâi")
-        }
+        // if (!isCodeSent) {
+        //   throw new Error("Te rog trimite codul de verificare mai întâi")
+        // }
 
-        if (!data.verificationCode) {
-          throw new Error("Te rog introduceți codul de verificare")
-        }
+        // if (!data.verificationCode) {
+        //   throw new Error("Te rog introduceți codul de verificare")
+        // }
 
         // Handle registration logic
         await authService.register({
           fullName: data.fullName!,
           email: data.email,
           password: data.password,
-          verificationCode: data.verificationCode!,
+          // verificationCode: data.verificationCode!,
         })
         
         router.push("/login?message=registered")
@@ -351,8 +348,6 @@ export function UserAuthForm({ className, isRegister = false, ...props }: UserAu
               {!password && "• Completați parola"}
               {!confirmPassword && "• Confirmați parola"}
               {password && confirmPassword && !passwordsMatch && "• Parolele nu se potrivesc"}
-              {!isCodeSent && "• Trimiteți codul de verificare"}
-              {!verificationCode && isCodeSent && "• Introduceți codul de verificare"}
             </div>
           )}
         </div>

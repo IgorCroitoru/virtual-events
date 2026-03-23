@@ -1,29 +1,20 @@
 'use client';
-import { ControlBar as CustomControlBar } from './liivekit/ControlBar';
 import {
-  ControlBar,
   GridLayout,
   ParticipantTile,
-  RoomAudioRenderer,
   useTracks,
   RoomContext,
-  usePersistentUserChoices,
   TrackLoop,
-  VideoTrack,
-  useRemoteParticipants
+  VideoTrack
 } from '@livekit/components-react';
-import { createLocalAudioTrack,createLocalVideoTrack, Room, Track } from 'livekit-client';
+import { Room, Track } from 'livekit-client';
 import '@livekit/components-styles';
 import { PropsWithChildren, useEffect, useRef, useState } from 'react';
-import { LIVEKIT_URL, TEMP_TOKEN } from '../../config';
-import { useDeviceSelection } from '@/context/DeviceSelectionContext';
+import { LIVEKIT_URL } from '../../config';
 import CameraAccessPage from '@/pages/camera-access';
-import { useChannelStore, useDeviceStore } from '@/store/useChannelStore';
-import PlayerVideo from './ui/Player2';
-import api from '@/lib/axios';
+import { useDeviceStore } from '@/store/useChannelStore';
 import { useSocket } from '@/context/WebSocketContext';
-const serverUrl = LIVEKIT_URL;
-const token = TEMP_TOKEN;
+
 export const LiveKitProvider = ({ children }: PropsWithChildren) => {
   const [roomInstance] = useState(() => new Room({ adaptiveStream: true, dynacast: true }));
   const { permissionsGranted, cameraId, microphoneId } = useDeviceStore();
@@ -218,19 +209,6 @@ export const LiveKitProvider = ({ children }: PropsWithChildren) => {
       room.off('participantDisconnected', handleParticipantDisconnected);
     };
   }, [roomInstance]);  // Request LiveKit token when channel changes but no token is available
-  // useEffect(() => {
-  //   if (currentChannel && !channelLiveKitToken) {
-  //     console.log('🎫 Requesting LiveKit token for channel:', currentChannel);
-      
-  //     requestLiveKitToken(currentChannel)
-  //       .then((response) => {
-  //         console.log('✅ LiveKit token received:', response);
-  //       })
-  //       .catch((error) => {
-  //         console.error('❌ Failed to get LiveKit token:', error);
-  //       });
-  //   }
-  // }, [currentChannel, channelLiveKitToken, requestLiveKitToken]);
 
    if (!permissionsGranted || !cameraId || !microphoneId) return <CameraAccessPage />;
 
@@ -242,10 +220,6 @@ export const LiveKitProvider = ({ children }: PropsWithChildren) => {
   );
 };
 
-// export const getLivekitToken = async (room: string): Promise<string> => {
-//   const res = await api.get<{token: string}>(`/livekit/token?room=${room}`);
-//   return res.data.token;
-// };
 
 export function MyVideoConference() {
   // `useTracks` returns all camera and screen share tracks. If a user

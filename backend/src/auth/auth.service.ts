@@ -28,9 +28,9 @@ export class AuthService {
     }
     
     // Check if email is verified
-    if (!user.isEmailVerified) {
-      throw new UnauthorizedException('Te rugăm să îți verifici email-ul înainte de a te conecta');
-    }
+    // if (!user.isEmailVerified) {
+    //   throw new UnauthorizedException('Te rugăm să îți verifici email-ul înainte de a te conecta');
+    // }
     
     delete user.password
     return user;
@@ -54,12 +54,12 @@ export class AuthService {
       password: hashedPassword,
     });
 
-    // 📧 Send verification email instead of returning tokens
-    await this.emailVerificationService.sendVerificationCode(
-      newUser._id.toString(), 
-      email, 
-      fullName
-    );
+    // // 📧 Send verification email instead of returning tokens
+    // await this.emailVerificationService.sendVerificationCode(
+    //   newUser._id.toString(), 
+    //   email, 
+    //   fullName
+    // );
 
     return {
       message: 'Contul a fost creat cu succes! Verifică-ți email-ul pentru a primi codul de verificare.',

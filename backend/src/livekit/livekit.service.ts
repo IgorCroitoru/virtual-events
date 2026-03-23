@@ -10,7 +10,7 @@ export class LivekitService {
 
   constructor(private configService: ConfigService) {
     this.apiKey = this.configService.get<string>('LIVEKIT_API_KEY');
-    this.apiSecret = this.configService.get<string>('LIVEKIT_API_SECRET');
+    this.apiSecret = this.configService.get<string>('LIVEKIT_SECRET_KEY');
   }
 
   generateToken(identity: string, room: string, name?: string): Promise<string> {
