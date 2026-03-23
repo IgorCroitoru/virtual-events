@@ -43,8 +43,10 @@ jobs:
         run: |
           rm -rf deploy-frontend
           mkdir -p deploy-frontend
-          cp -R frontend/. deploy-frontend/
-          cp -R node_modules deploy-frontend/node_modules
+          cp -R frontend/dist/standalone/. deploy-frontend/
+          mkdir -p deploy-frontend/dist
+          cp -R frontend/dist/static deploy-frontend/dist/static
+          cp -R frontend/public deploy-frontend/public
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
