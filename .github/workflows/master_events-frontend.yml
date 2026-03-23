@@ -39,11 +39,18 @@ jobs:
         run: |
           npm run build -w frontend
 
+      - name: Prepare deployment package
+        run: |
+          rm -rf deploy-frontend
+          mkdir -p deploy-frontend
+          cp -R frontend/. deploy-frontend/
+          cp -R node_modules deploy-frontend/node_modules
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: frontend-app
-          path: frontend
+          path: deploy-frontend
 
   deploy:
     runs-on: ubuntu-latest
