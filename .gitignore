@@ -96,7 +96,7 @@ next-env.d.ts
 # PACKAGE MANAGERS
 # ====================
 # npm
-package-lock.json
+# package-lock.json
 npm-debug.log*
 
 # yarn
