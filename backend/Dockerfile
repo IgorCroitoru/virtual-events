@@ -12,6 +12,7 @@ RUN apk add --no-cache git
 COPY package*.json ./
 RUN npm install --omit=dev
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/data ./data
 ENV NODE_ENV=production
 EXPOSE 3000
 CMD ["node", "dist/src/main.js"]

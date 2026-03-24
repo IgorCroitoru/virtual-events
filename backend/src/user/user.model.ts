@@ -15,7 +15,7 @@ export class User {
   @Prop({ select: false }) // Hide password for security
   password?: string;
 
-  @Prop({ unique: true, sparse: true }) // Only set if using Google OAuth
+  @Prop({ required: false }) // Only set if using Google OAuth
   googleId?: string;
   @Prop({ required: false })
   avatar?: string; // URL to user's avatar image
@@ -31,3 +31,11 @@ export class User {
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
+
+UserSchema.index(
+  { googleId: 1 },
+  {
+    unique: true,
+    partialFilterExpression: { googleId: { $type: 'string' } },
+  },
+);
